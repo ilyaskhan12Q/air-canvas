@@ -147,7 +147,7 @@ No stylus. No touchscreen. Just your hand and a webcam.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/air-canvas.git
+git clone https://github.com/ilyaskhan12Q/air-canvas.git
 cd air-canvas
 
 # 2. Create and activate a virtual environment (recommended)
