@@ -1,0 +1,12 @@
+# ── Core ──────────────────────────────────────────────────────────────────────
+streamlit>=1.32.0
+opencv-python-headless>=4.9.0
+
+# mediapipe 0.10.14+ uses the Tasks API (mp.solutions was removed).
+# Python 3.13 users: pip install mediapipe --pre  if no stable wheel exists yet.
+mediapipe>=0.10.14
+
+numpy>=1.26.0
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+Pillow>=10.2.0

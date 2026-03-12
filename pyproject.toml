@@ -1,0 +1,95 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name            = "air-canvas"
+version         = "1.0.0"
+description     = "Real-time hand gesture drawing using MediaPipe & Streamlit"
+readme          = "README.md"
+license         = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors         = [{ name = "Air Canvas Contributors" }]
+keywords        = ["hand-tracking", "gesture", "mediapipe", "opencv", "streamlit", "air-drawing"]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+
+dependencies = [
+    "streamlit>=1.32.0",
+    "opencv-python-headless>=4.9.0",
+    "mediapipe>=0.10.9",
+    "numpy>=1.26.0",
+    "Pillow>=10.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.12.0",
+    "ruff>=0.3.0",
+    "black>=24.2.0",
+    "mypy>=1.9.0",
+]
+
+[project.urls]
+Homepage      = "https://github.com/your-username/air-canvas"
+Documentation = "https://github.com/your-username/air-canvas#readme"
+Issues        = "https://github.com/your-username/air-canvas/issues"
+Changelog     = "https://github.com/your-username/air-canvas/blob/main/CHANGELOG.md"
+
+[project.scripts]
+air-canvas = "app:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+# ── Ruff ──────────────────────────────────────────────────────────────────────
+[tool.ruff]
+line-length    = 100
+target-version = "py39"
+select         = ["E", "F", "I", "UP", "B", "SIM"]
+ignore         = ["E501"]
+
+[tool.ruff.isort]
+known-first-party = ["src"]
+
+# ── Black ─────────────────────────────────────────────────────────────────────
+[tool.black]
+line-length    = 100
+target-version = ["py39", "py310", "py311", "py312"]
+
+# ── Pytest ────────────────────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths    = ["tests"]
+addopts      = "-v --tb=short"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+# ── Coverage ──────────────────────────────────────────────────────────────────
+[tool.coverage.run]
+source = ["src"]
+omit   = ["tests/*"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under   = 70
+
+# ── Mypy ──────────────────────────────────────────────────────────────────────
+[tool.mypy]
+python_version = "3.9"
+strict         = false
+ignore_missing_imports = true
