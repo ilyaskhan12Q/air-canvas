@@ -45,7 +45,7 @@ Look for issues labelled **`good first issue`** or **`help wanted`** — these a
 
 ```bash
 # 1. Fork & clone
-git clone https://github.com/YOUR-USERNAME/air-canvas.git
+git clone https://github.com/ilyaskhan12Q/air-canvas.git
 cd air-canvas
 
 # 2. Create a virtual environment
